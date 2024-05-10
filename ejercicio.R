@@ -15,3 +15,7 @@ length()
 dim()
 
 pedidos_dif<-length(unique(datos$Invoice))
+precio_medio<-datos%>%group_by(Invoice)%>%summarise(media=mean(n()))
+media_producto<-datos%>%group_by(Invoice)%>%summarise(precio_total=sum(Quantity))
+
+                                                      
